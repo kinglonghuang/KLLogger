@@ -13,7 +13,7 @@ KLLogger是一个iOS的日志组件，除了提供日志输出功能外，也提
     KLLog_Error(ModuleID,Format,...)
 
 
-###二.使用
+###二.自定义
 
 1.在KLLoggerDefine.h中配置所有的业务模块，确保枚举和字符串元素顺序对应。
 
