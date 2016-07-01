@@ -52,11 +52,13 @@ KLLogger是一个iOS的日志组件，除了提供日志输出功能外，也提
     LogDebug(ModuleID_Common, @"This is a debug log from %@",@"Common");
     LogInfo(ModuleID_Download, @"This is a info log from %@", @"Download");
     LogError(ModuleID_Common, @"This is error log from %@",@"Common");
-    Log_Debug(ModuleID_Download, @"This is another debug log from %@",@"Download");
-
-
+    LogDebug(ModuleID_Download, @"This is another debug log from %@",@"Download");
+    DownloadLog(@"This is a debug log for download module");
+    VideoLog(@"This is a info log for video module");
+    
 控制台显示如下：
 
-    2014-11-17 18:24:31.214 TestKLLogger[2013:1018210] Debug (Common) -[ViewController test]: This is a debug log   from  Common
-    2014-11-17 18:24:31.216 TestKLLogger[2013:1018210] Info (Download) -[ViewController test]: This is a info log from Download
-    2014-11-17 18:24:31.216 TestKLLogger[2013:1018210] Debug (Download) -[ViewController test]: This is another debug log from Download
+    2016-07-01 15:25:01.775 TestKLLogger[11999:2221573] Debug (Common) -[ViewController test]: This is a debug log from Common
+    2016-07-01 15:25:01.776 TestKLLogger[11999:2221573] Info (Download) -[ViewController test]: This is a info log from Download
+    2016-07-01 15:25:01.776 TestKLLogger[11999:2221573] Debug (Download) -[ViewController test]: This is another debug log from Download
+    2016-07-01 15:25:01.776 TestKLLogger[11999:2221573] Debug (Download) -[ViewController test]: This is a debug log for download module
