@@ -7,10 +7,10 @@ KLLogger是一个iOS的日志组件，除了提供日志输出功能外，也提
 
 用户可选择以下宏来输出日志:
 
-    KLLog_Debug(ModuleID,Format,...)
-    KLLog_Info(ModuleID,Format,...)
-    KLLog_Warning(ModuleID,Format,...)
-    KLLog_Error(ModuleID,Format,...)
+    LogDebug(ModuleID,Format,...)
+    LogInfo(ModuleID,Format,...)
+    LogWarning(ModuleID,Format,...)
+    LogError(ModuleID,Format,...)
 
 
 ###二.自定义
@@ -33,6 +33,12 @@ KLLogger是一个iOS的日志组件，除了提供日志输出功能外，也提
    > 控制台场景(a)下注册了所有日志级别 <br>
    > 追踪场景(b)下注册了LogLevel_Warning, LogLevel_Error,两种级别的日志将保存到内存中的日志队列
 
+4.自定义宏，方便模块使用
+
+    #define DownloadLog(Format,...)     Log_Debug(ModuleID_Download, Format, ##__VA_ARGS__)
+    #define VideoLog(Format,...)        Log_Info(ModuleID_Video, Format, ##__VA_ARGS__)
+    
+    DownloadLog(@"This is a debug log for download module");
 
 ###三.举例：
 
@@ -43,10 +49,10 @@ KLLogger是一个iOS的日志组件，除了提供日志输出功能外，也提
 
 
     //测试代码
-    KLLog_Debug(ModuleID_Common, @"This is a debug log from %@",@"Common");
-    KLLog_Info(ModuleID_Download, @"This is a info log from %@", @"Download");
-    KLLog_Error(ModuleID_Common, @"This is error log from %@",@"Common");
-    KLLog_Debug(ModuleID_Download, @"This is another debug log from %@",@"Download");
+    LogDebug(ModuleID_Common, @"This is a debug log from %@",@"Common");
+    LogInfo(ModuleID_Download, @"This is a info log from %@", @"Download");
+    LogError(ModuleID_Common, @"This is error log from %@",@"Common");
+    Log_Debug(ModuleID_Download, @"This is another debug log from %@",@"Download");
 
 
 控制台显示如下：
