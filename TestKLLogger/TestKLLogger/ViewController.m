@@ -56,7 +56,7 @@
 #define VideoLog(Format,...)        Log_Info(ModuleID_Video, Format, ##__VA_ARGS__)
     
     //Customize log demo.
-    DownloadLog(@"this is a debug log for download module");
+    DownloadLog(@"This is a debug log for download module");
     VideoLog(@"This is a info log for video module"); //will not show, because the video module has not been registered.
 }
 
