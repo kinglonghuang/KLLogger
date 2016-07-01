@@ -46,10 +46,18 @@
 #pragma mark - Test
 
 - (void)test {
-    KLLog_Debug(ModuleID_Common, @"This is a debug log from %@",@"Common");
-    KLLog_Info(ModuleID_Download, @"This is a info log from %@", @"Download");
-    KLLog_Error(ModuleID_Common, @"This is error log from %@",@"Common");
-    KLLog_Debug(ModuleID_Download, @"This is another debug log from %@",@"Download");
+    LogDebug(ModuleID_Common, @"This is a debug log from %@",@"Common");
+    LogInfo(ModuleID_Download, @"This is a info log from %@", @"Download");
+    LogError(ModuleID_Common, @"This is error log from %@",@"Common");
+    LogDebug(ModuleID_Download, @"This is another debug log from %@",@"Download");
+    
+    //Customize log define
+#define DownloadLog(Format,...)     Log_Debug(ModuleID_Download, Format, ##__VA_ARGS__)
+#define VideoLog(Format,...)        Log_Info(ModuleID_Video, Format, ##__VA_ARGS__)
+    
+    //Customize log demo.
+    DownloadLog(@"this is a debug log for download module");
+    VideoLog(@"This is a info log for video module"); //will not show, because the video module has not been registered.
 }
 
 #pragma mark - LifeCycle

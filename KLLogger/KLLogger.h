@@ -48,7 +48,7 @@
 
 @end
 
-#define KLLog_Debug(ModuleID, Format,...)           Log_Debug(KLLogger, ModuleID, Format, ##__VA_ARGS__)
-#define KLLog_Info(ModuleID, Format,...)            Log_Info(KLLogger, ModuleID, Format, ##__VA_ARGS__)
-#define KLLog_Warning(ModuleID, Format,...)         Log_Warning(KLLogger, ModuleID , Format, ##__VA_ARGS__)
-#define KLLog_Error(ModuleID, Format,...)           Log_Error(KLLogger, ModuleID, Format, ##__VA_ARGS__)
+#define LogDebug(ModuleID, Format,...)          Log_Debug(ModuleID, Format, ##__VA_ARGS__)
+#define LogInfo(ModuleID, Format,...)           Log_Info(ModuleID, Format, ##__VA_ARGS__)
+#define LogWarning(ModuleID, Format,...)        Log_Warning(ModuleID , Format, ##__VA_ARGS__)
+#define LogError(ModuleID, Format,...)          Log_Error(ModuleID, Format, ##__VA_ARGS__)

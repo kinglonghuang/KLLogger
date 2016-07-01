@@ -44,11 +44,11 @@ static NSString * tableForLogLevel[] = {
 
 @end
 
-#define Log_Debug(ALogger, ModuleID, Format, ...) [[ALogger sharedLogger] addLog:[NSString stringWithFormat:(Format),##__VA_ARGS__] logLevel:(LogLevel_Debug) function:__PRETTY_FUNCTION__ line:__LINE__ module:ModuleID];
+#define Log_Debug(ModuleID, Format, ...) [[KLLogger sharedLogger] addLog:[NSString stringWithFormat:(Format),##__VA_ARGS__] logLevel:(LogLevel_Debug) function:__PRETTY_FUNCTION__ line:__LINE__ module:ModuleID];
 
-#define Log_Info(ALogger, ModuleID, Format, ...) [[ALogger sharedLogger] addLog:[NSString stringWithFormat:(Format),##__VA_ARGS__] logLevel:(LogLevel_Info) function:__FUNCTION__ line:__LINE__ module:ModuleID];
+#define Log_Info(ModuleID, Format, ...) [[KLLogger sharedLogger] addLog:[NSString stringWithFormat:(Format),##__VA_ARGS__] logLevel:(LogLevel_Info) function:__FUNCTION__ line:__LINE__ module:ModuleID];
 
-#define Log_Warning(ALogger, ModuleID, Format, ...) [[ALogger sharedLogger] addLog:[NSString stringWithFormat:(Format),##__VA_ARGS__] logLevel:(LogLevel_Warning) function:__PRETTY_FUNCTION__ line:__LINE__ module:ModuleID];
+#define Log_Warning(ModuleID, Format, ...) [[KLLogger sharedLogger] addLog:[NSString stringWithFormat:(Format),##__VA_ARGS__] logLevel:(LogLevel_Warning) function:__PRETTY_FUNCTION__ line:__LINE__ module:ModuleID];
 
-#define Log_Error(ALogger, ModuleID, Format, ...) [[ALogger sharedLogger] addLog:[NSString stringWithFormat:(Format),##__VA_ARGS__] logLevel:(LogLevel_Error) function:__PRETTY_FUNCTION__ line:__LINE__ module:ModuleID];
+#define Log_Error(ModuleID, Format, ...) [[KLLogger sharedLogger] addLog:[NSString stringWithFormat:(Format),##__VA_ARGS__] logLevel:(LogLevel_Error) function:__PRETTY_FUNCTION__ line:__LINE__ module:ModuleID];
 

@@ -38,12 +38,12 @@
 
 typedef NS_ENUM(NSInteger, ModuleID) {
     ModuleID_Common         = 1 << 0,
-    ModuleID_Login          = 1 << 1,
+    ModuleID_Video          = 1 << 1,
     ModuleID_Download       = 1 << 2
 };
 
 static NSString * tableForLogID[] = {
     @"Common",
-    @"Login",
+    @"Video",
     @"Download",
 };
